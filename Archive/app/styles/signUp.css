@@ -1,0 +1,21 @@
+.genderPading {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+.signUpButton {
+	margin-bottom: 2em;
+}
+.signInText {
+  font-size: 1.125em;
+  color: #ff3d63;
+  cursor: pointer;
+}
+
+@media (min-width: 768px){
+	.signUP-full {
+		padding: 2em 14.250em 0em 14.250em;
+	}
+	.DOBDate {
+		float: right;
+	}
+}

@@ -1,0 +1,102 @@
+<style type="text/css">
+    
+    .textDisplay {
+font-weight: bold; 
+    }
+    .boxModel {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    min-height: 270px;
+    width: 800px;
+    margin-top: 200px;
+    margin-left: 150px;
+}
+.btn-tc {
+    font-family: Calibri;
+    font-size: 1.214em;
+    font-weight: bold;
+    box-shadow: 0px 3px 7px 0 rgba(0, 0, 0, 0.35);
+    text-transform: uppercase;
+    float: right;
+    background-color: green;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+</style>
+<div class="content">
+    <div class="row globalRowPadding">
+        <div class="col-md-12 globalRemove-col-Padding">
+            <div class="col-md-12 globalRemove-col-Padding main">
+                <div class="globalMainPadding">
+                    <button type="submit" class="btn tc-btn pink-btn" ng-click="profileControllerVm.logout()">Log Out</button>
+                    <button type="submit" class="btn tc-btn pink-btn" ng-if="profileControllerVm.showButton" ng-click="profileControllerVm.applyLoan()">Apply Loan</button>
+                    <div class="col-md-12 globalRemove-col-Padding">
+                        <div class="globalContent center-block">
+                            <div class="col-md-6">
+                                <div class="profileCard text-center boxModel" ng-if="!profileControllerVm.showButton">
+                                    <input type="submit" value="Edit" class="btn btn-tc" ng-click="profileControllerVm.edit()">
+                                    <div>
+                                        <div class="col-md-12" style="padding-top: 20px;">
+                                            <div class="col-md-6">
+                                                <div class="col-md-6 textDisplay" ><span>Purpose Of Loan:</span></div>
+                                                <div class="col-md-6" ><span> {{profileControllerVm.loanDetails.purpose}}</span></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="textDisplay col-md-6"><span>Total Loan Amount: </span></div>
+                                                <div class="col-md-6"><span>{{profileControllerVm.loanDetails.amount}}</span></div> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12" style="padding-top: 20px;">
+                                            <div class="col-md-6">
+                                                <div class="textDisplay col-md-6"><span>Tenure Of Loan: </span></div>
+                                                <div class="col-md-6"><span>{{profileControllerVm.loanDetails.tenureYear}} years {{profileControllerVm.loanDetails.tenureMonth}}</span><br></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="textDisplay col-md-6"><span>Residence Type:</span></div>
+                                                <div class="col-md-6"><span> {{profileControllerVm.loanDetails.residence}}</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12" style="padding-top: 20px ">
+                                            <div class="col-md-6">
+                                                <div class="textDisplay col-md-6"><span>Permanent Address: </span></div>
+                                                <div class="col-md-6"><span>{{profileControllerVm.loanDetails.streetName}}<br>
+                                                                    {{profileControllerVm.loanDetails.city}}<br>
+                                                                    {{profileControllerVm.loanDetails.state}}<br>
+                                                                    {{profileControllerVm.loanDetails.pincode}}
+                                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>                                  
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            
+</div>
+
+

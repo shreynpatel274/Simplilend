@@ -1,0 +1,52 @@
+    <!doctype html>
+    <html>
+      <head>
+        <title>Sample Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+        <link rel="stylesheet" href="styles/button.css">
+        <link rel="stylesheet" href="styles/signUp.css">
+       
+      </head>
+      <body ng-app="portal">
+
+        <div ui-view="content"></div>
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+       
+       
+        <script src="app.modules.js"></script>
+        <script src="app.state.js"></script>
+        <script src="app.constants.js"></script>
+
+        <script src="app-handlers/state.handler.js"></script>
+
+        <script src="app-services/auth.service.js"></script>
+        <script src="app-services/api.service.js"></script>
+        <script src="app-services/data.service.js"></script>
+        <script src="app-services/principal.service.js"></script>
+        
+        <script src="app-services/exception.service.js"></script>
+
+        <script src="login/login.controller.js"></script>
+        <script src="login/login.state.js"></script>
+        <script src="loan/loan.controller.js"></script>
+        <script src="loan/loan.state.js"></script>
+
+        <script src="profile/profile.controller.js"></script>
+        <script src="profile/profile.state.js"></script>
+
+
+      </body>
+    </html>

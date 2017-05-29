@@ -1,0 +1,31 @@
+
+.tc-btn{
+	font-family: Calibri;
+	font-size: 1.214em;
+	font-weight: bold;
+	box-shadow: 0px 3px 7px 0 rgba(0, 0, 0, 0.35);
+	text-transform: uppercase;
+}
+
+.pink-btn, .pink-btn:hover, .pink-btn:focus{
+	background-color: #ff3d63;
+	color: #fff;
+	cursor: pointer;
+}
+.green-btn, .green-btn:hover, .green-btn:focus {
+	background-color: #277e16;
+	color: #fff;
+	cursor: pointer;
+}
+.membership-btn-padding {
+	margin-top: 3.429em;
+}
+.border-btn {
+	font-family: Calibri;
+	font-size: 1.214em;
+	font-weight: bold;
+	background-color: #fff;
+	border: 1px solid #ff3d63;
+	/*box-shadow: 0px 3px/ 7px 0 rgba(0, 0, 0, 0.35);*/
+	text-transform: uppercase;	
+}

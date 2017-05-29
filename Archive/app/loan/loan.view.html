@@ -1,0 +1,126 @@
+﻿<div class="content" >
+    <div class="row">
+        <div class="col-lg-12">
+            <form class="text-center signUP-full" id="form" name="form">
+                <div class="form-group ">
+                    <span class="sub-heading">
+                        Loan Application
+                    </span>
+                </div>
+                <div class="form-group"> 
+                    <div class="form-group">
+                        <select class="form-control" id="gender" ng-model="loanControllerVm.loan.purpose" required>
+                            <option value="" disabled selected>Purpose of loan</option>
+                            <option>Medical</option>
+                            <option>House</option>
+                            <option>Car</option>
+                            <option>Personal</option>
+                            <option>Education</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error': form.streetName.$dirty && form.streetName.$error.required }">
+                                <input type="text" class="form-control" id="streetName" placeholder="Enter Street Address" ng-model="loanControllerVm.loan.streetName"  required name="streetName">
+                                <span ng-show="form.streetName.$dirty && form.streetName.$error.required" class="help-block">Street Address is requored</span>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <select class="form-control" id="state" ng-model="loanControllerVm.loan.state" required>
+                                <option value="" disabled selected>State</option>
+                                <option>Andaman and Nicobar Islands</option>
+                                <option>Andhra Pradesh</option>
+                                <option >Arunachal Pradesh</option>
+                                <option>Assam</option>
+                                <option >Bihar</option>
+                                <option >Chandigarh</option>
+                                <option >Chhattisgarh</option>
+                                <option>Dadra and Nagar Haveli</option>
+                                <option>Daman and Diu</option>
+                                <option>Delhi</option>
+                                <option>Goa</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jammu and Kashmir</option>
+                                <option>Jharkhand</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Lakshadweep</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Manipur</option>
+                                <option>Meghalaya</option>
+                                <option>Mizoram</option>
+                                <option>Nagaland</option>
+                                <option>Orissa</option>
+                                <option>Pondicherry</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Sikkim</option>
+                                <option>Tamil Nadu</option>
+                                <option>Tripura</option>
+                                <option >Uttaranchal</option>
+                                <option>Uttar Pradesh</option>
+                                <option>West Bengal</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error': form.city.$dirty && form.city.$error.required }">
+                                <input type="text" class="form-control" id="city" placeholder="Enter City" ng-model="loanControllerVm.loan.city"  required name="city">
+                                <span ng-show="form.city.$dirty && form.city.$error.required" class="help-block">City is required</span>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error': form.pincode.$dirty && form.pincode.$error.required }">
+                                <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" ng-model="loanControllerVm.loan.pincode"  required name="pincode">
+                                <span ng-show="form.pincode.$dirty && form.pincode.$error.required" class="help-block">Pincode required</span>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-6">
+                        <select class="form-control" id="tenureYear" ng-model="loanControllerVm.loan.tenureYear" required>
+                            <option value="" disabled selected>Tenure in Years</option>
+                            <option ng-repeat="x in loanControllerVm.yearGenerator">{{x}}</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <select class="form-control" id="tenureMonth" ng-model="loanControllerVm.loan.tenureMonth" required>
+                                <option value="" disabled selected>Tenure in month</option>
+                                <option ng-repeat="x in loanControllerVm.monthGenerator">{{x}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': form.amount.$dirty && form.amount.$error.required }">
+                    <input type="number" class="form-control" id="amount" placeholder="amount Number" ng-model="loanControllerVm.loan.amount"  required name="amount">
+                    <span ng-show="form.amount.$dirty && form.amount.$error.required" class="help-block">Amount is required</span>
+
+                </div>
+                <div class="form-group" required>
+                    <span> Residence Type</span>
+                    <input type="radio" ng-model="loanControllerVm.loan.residence" value="house">House
+                    <input type="radio" ng-model="loanControllerVm.loan.residence" value="apartment">Apartment
+                </div>
+                <span ng-if="loanControllerVm.loanDetailsEdit">Currently will not be able to edit becuse it doesnt make sense that you edit the loan application after applying</span>
+                <div class="col-lg-12 text-center getStarted signUpButton">
+                <button type="submit" ng-disabled="form.$invalid" class="btn tc-btn pink-btn" ng-click="loanControllerVm.applyLoan()" ng-if="!loanControllerVm.dataLoading">Apply</button>
+                <md-progress-circular ng-if="loanControllerVm.dataLoading" class="md-hue-2" md-diameter="20px"></md-progress-circular>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
